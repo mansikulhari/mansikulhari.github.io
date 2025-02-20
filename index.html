@@ -5,169 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mansi Kulhari - Data Analyst Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">MK</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Mansi Kulhari</h1>
-            <h2>Data Analyst & Engineer</h2>
-            <p>Transforming data into actionable insights</p>
-            <div class="hero-stats">
-                <div class="stat">
-                    <h3>3+</h3>
-                    <p>Years Experience</p>
-                </div>
-                <div class="stat">
-                    <h3>20+</h3>
-                    <p>Projects Completed</p>
-                </div>
-                <div class="stat">
-                    <h3>90%</h3>
-                    <p>Client Satisfaction</p>
-                </div>
+            <div class="intro-text">
+                <h2>Hello I'm</h2>
+                <h1>Mansi Kulhari</h1>
+            </div>
+            <div class="cta-buttons">
+                <a href="https://drive.google.com/file/d/15ZAKANg2JBr_frCOcbje7-4UmCinB5tK/view?usp=sharing" target="_blank" class="cta-button">
+                    Download Resume
+                </a>
+                <a href="#contact" class="cta-button dark">
+                    Contact Information
+                </a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/mansikulhari/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/mansikulhari" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>Data Analyst with expertise in Python, SQL, and data visualization, focused on driving business decisions through advanced analytics and process optimization. Proven success in developing real-time dashboards and enhancing user engagement through data-driven strategies.</p>
-                <div class="education">
-                    <h3>Education</h3>
-                    <p>MS in Applied Data Science - University of Southern California</p>
-                    <p>BTech in Computer Science - IGDTUW</p>
-                </div>
-            </div>
-            <div class="skills-chart">
-                <canvas id="skillsChart"></canvas>
-            </div>
+    <section id="about">
+        <div class="section-header">
+            <h3>Get To Know More</h3>
+            <h2>About Me</h2>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Programming</h3>
-                <div class="skill-item">
-                    <span>Python</span>
-                    <div class="progress-bar"><div class="progress" style="width: 95%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <span>SQL</span>
-                    <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <span>R</span>
-                    <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
+        <div class="about-content">
+            <div class="profile-photo">
+                <!-- Placeholder for photo -->
+                <div class="photo-placeholder">
+                    <i class="fas fa-user"></i>
                 </div>
             </div>
-            <div class="skill-category">
-                <h3>Data Visualization</h3>
-                <div class="skill-item">
-                    <span>Tableau</span>
-                    <div class="progress-bar"><div class="progress" style="width: 92%"></div></div>
+            <div class="info-cards">
+                <div class="info-card">
+                    <i class="fas fa-award"></i>
+                    <h3>Professional Experience</h3>
+                    <p>1+ years</p>
                 </div>
-                <div class="skill-item">
-                    <span>Power BI</span>
-                    <div class="progress-bar"><div class="progress" style="width: 88%"></div></div>
+                <div class="info-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Education</h3>
+                    <p>MS in Applied Data Science</p>
+                    <p>University of Southern California</p>
+                    <p>BTech in Computer Science</p>
+                    <p>IGDTUW</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>Featured Projects</h2>
+    <section id="projects">
+        <div class="section-header">
+            <h3>Browse My Recent</h3>
+            <h2>Projects</h2>
+        </div>
         <div class="project-grid">
             <div class="project-card">
-                <div class="project-content">
-                    <h3>Thyroid Disease Risk Prediction</h3>
-                    <p>Healthcare Analytics | Machine Learning | ETL Pipeline</p>
-                    <ul>
-                        <li>Designed comprehensive data pipeline</li>
-                        <li>Improved prediction accuracy by 25%</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="#" class="btn">View Project</a>
-                    </div>
+                <div class="project-image">
+                    <img src="/api/placeholder/400/300" alt="Reddit Forum Analysis" />
                 </div>
+                <h3>Reddit Forum Analysis and Clustering</h3>
+                <p class="tech-stack">Python, NLP, Clustering Algorithms</p>
+                <a href="https://github.com/mansikulhari/Reddit-Forum-Analysis-and-Clustering" class="project-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
             </div>
+            
             <div class="project-card">
-                <div class="project-content">
-                    <h3>eTA – Interactive Course Assistant</h3>
-                    <p>FAISS | Machine Learning | Python</p>
-                    <ul>
-                        <li>Processed 1,000+ daily queries</li>
-                        <li>90% improvement in response accuracy</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="#" class="btn">View Project</a>
-                    </div>
+                <div class="project-image">
+                    <img src="/api/placeholder/400/300" alt="Stock Price Analysis" />
                 </div>
+                <h3>Stock Price Analysis</h3>
+                <p class="tech-stack">Python, Pandas, Algorithmic Trading</p>
+                <a href="https://github.com/mansikulhari/Stock-Price-Analysis-and-Algorithmic-Trading" class="project-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="/api/placeholder/400/300" alt="PDF Chatbot" />
+                </div>
+                <h3>PDF Chatbot</h3>
+                <p class="tech-stack">Langchain, GPT 3.5, Llama 2</p>
+                <a href="https://github.com/mansikulhari/PDF-Chatbot" class="project-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Get In Touch</h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <div class="contact-grid">
-                    <a href="mailto:mansi.kulhari99@gmail.com" class="contact-item" title="Send me an email">
-                        <i class="fas fa-envelope"></i>
-                        <p>mansi.kulhari99@gmail.com</p>
-                    </a>
-                    <a href="tel:+12132745564" class="contact-item" title="Call me">
-                        <i class="fas fa-phone"></i>
-                        <p>+1 (213) 274-5564</p>
-                    </a>
-                    <a href="https://www.linkedin.com/in/mansikulhari/" target="_blank" class="contact-item" title="View LinkedIn Profile">
-                        <i class="fab fa-linkedin"></i>
-                        <p>LinkedIn</p>
-                    </a>
-                    <a href="https://github.com/mansikulhari" target="_blank" class="contact-item" title="View GitHub Profile">
-                        <i class="fab fa-github"></i>
-                        <p>GitHub</p>
-                    </a>
-                    <a href="https://swiftson.wordpress.com/" target="_blank" class="contact-item" title="Read my Blog">
-                        <i class="fab fa-wordpress"></i>
-                        <p>Blog</p>
-                    </a>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Los Angeles, CA</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Mansi Kulhari. All rights reserved.</p>
-    </footer>
 </body>
 </html>
