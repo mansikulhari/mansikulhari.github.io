@@ -324,7 +324,7 @@ body {
     width: 0;
 }
 
-/* Projects Section */
+/* Projects Section - New Style */
 .projects {
     padding: 5rem 2rem;
     max-width: 1200px;
@@ -334,24 +334,25 @@ body {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
 .project-card {
-    background: white;
-    border-radius: 1rem;
+    position: relative;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    height: 100%;
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -368,74 +369,81 @@ body {
     transition: transform 0.5s ease;
 }
 
-.project-card:hover .project-image img {
-    transform: scale(1.05);
-}
-
-.project-content {
+.project-title {
     padding: 1.5rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    flex: 1;
 }
 
-.project-content h3 {
-    color: #333;
+.project-title h3 {
     font-size: 1.4rem;
     margin-bottom: 0.75rem;
+    color: #333;
 }
 
 .project-tech {
     color: var(--primary-color);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+    font-size: 0.85rem;
     font-weight: 500;
+    line-height: 1.5;
 }
 
-.project-content ul {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-    color: #555;
-    flex-grow: 1;
+/* Project Overlay for Hover Effect */
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    padding: 2rem;
 }
 
-.project-content li {
+.project-card:hover .project-overlay {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.project-details {
+    text-align: center;
+    max-width: 90%;
+}
+
+.project-details h3 {
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    color: #333;
 }
 
-.project-links {
-    margin-top: auto;
+.project-description {
+    margin: 1.5rem 0;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
-.view-project-btn {
+.project-btn {
     display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.6rem 1.5rem;
-    background-color: var(--primary-color);
+    padding: 0.7rem 1.5rem;
+    background: var(--primary-color);
     color: white;
-    font-weight: 500;
     text-decoration: none;
-    border-radius: 0.25rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
     transition: all 0.3s ease;
 }
 
-.view-project-btn:hover {
-    background-color: var(--secondary-color);
+.project-btn:hover {
+    background: var(--secondary-color);
     transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-.view-more-container {
-    text-align: center;
-    margin-top: 3rem;
-}
-
-.btn.view-more {
-    font-size: 1.1rem;
-    padding: 0.75rem 2rem;
-    background: var(--primary-color);
-    color: white;
-    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Contact Section */
@@ -602,5 +610,18 @@ footer {
         width: 50px;
         height: 50px;
         font-size: 1.2rem;
+    }
+    
+    .project-overlay {
+        padding: 1rem;
+    }
+    
+    .project-details {
+        max-width: 100%;
+    }
+    
+    .project-description {
+        font-size: 0.85rem;
+        margin: 1rem 0;
     }
 }
