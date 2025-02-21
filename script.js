@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 datasets: [{
                     label: 'Skill Level',
                     data: [95, 90, 88, 85, 80, 85],
-                    backgroundColor: 'rgba(116, 185, 255, 0.2)',
-                    borderColor: 'rgba(116, 185, 255, 1)',
-                    pointBackgroundColor: 'rgba(116, 185, 255, 1)',
+                    backgroundColor: 'rgba(75, 144, 217, 0.2)',
+                    borderColor: 'rgba(75, 144, 217, 1)',
+                    pointBackgroundColor: 'rgba(75, 144, 217, 1)',
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgba(116, 185, 255, 1)'
+                    pointHoverBorderColor: 'rgba(75, 144, 217, 1)'
                 }]
             },
             options: {
@@ -86,3 +86,26 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Animate progress bars on scroll
+    const progressBars = document.querySelectorAll('.progress');
+    
+    if (progressBars.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.width = entry.target.getAttribute('data-width');
+                    }, 200);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        progressBars.forEach(bar => {
+            const width = bar.style.width;
+            bar.style.width = '0';
+            bar.setAttribute('data-width', width);
+            observer.observe(bar);
+        });
+    }
+});
