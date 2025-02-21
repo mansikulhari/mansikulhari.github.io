@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 datasets: [{
                     label: 'Skill Level',
                     data: [95, 90, 88, 85, 80, 85],
-                    backgroundColor: 'rgba(65, 105, 225, 0.2)',
-                    borderColor: 'rgba(65, 105, 225, 1)',
-                    pointBackgroundColor: 'rgba(65, 105, 225, 1)',
+                    backgroundColor: 'rgba(116, 185, 255, 0.2)',
+                    borderColor: 'rgba(116, 185, 255, 1)',
+                    pointBackgroundColor: 'rgba(116, 185, 255, 1)',
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgba(65, 105, 225, 1)'
+                    pointHoverBorderColor: 'rgba(116, 185, 255, 1)'
                 }]
             },
             options: {
@@ -65,3 +65,24 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
+        if (!nav.contains(event.target)) {
+            navLinks.classList.remove('active');
+        }
+    });
+
+    // Smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const navHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                
+                window.scrollTo({
+                    top: targetPosition - navHeight,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
