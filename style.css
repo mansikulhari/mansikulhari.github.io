@@ -1,13 +1,11 @@
-/* Modern CSS with improved visibility and color updates */
+/* Modern CSS with data-focused design and cross-browser fixes */
 :root {
-    --primary-color: #4b90d9; /* Adjusted to a more visible medium blue */
-    --secondary-color: #2671c7; /* Slightly darker blue for contrast */
-    --text-color: #2d3436;
-    --bg-color: #f5f9ff;
+    --primary-color: #75A5F2;
+    --secondary-color: #3379E4;
+    --dark-blue: #436fb6;
+    --text-color: #1f2937;
+    --bg-color: #f3f4f6;
     --card-bg: #ffffff;
-    --gradient-top: #6ea7e6; /* Medium blue at top */
-    --gradient-middle: #f5f9ff; /* Very light blue in middle */
-    --gradient-bottom: #3a7bcc; /* Darker blue at bottom */
 }
 
 * {
@@ -22,14 +20,13 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    scroll-behavior: smooth;
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background: linear-gradient(180deg, var(--gradient-top) 0%, var(--gradient-middle) 30%, var(--gradient-middle) 70%, var(--gradient-bottom) 100%);
+    background: linear-gradient(180deg, var(--primary-color) 0%, var(--bg-color) 20%, var(--bg-color) 80%, var(--dark-blue) 100%);
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -40,10 +37,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     z-index: 1000;
 }
 
@@ -57,7 +52,7 @@ body {
 }
 
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
 }
@@ -72,28 +67,11 @@ body {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
-    position: relative;
-    padding: 0.5rem 0;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
     color: var(--primary-color);
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--primary-color);
-    transition: width 0.3s;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
 }
 
 /* Mobile Menu */
@@ -114,7 +92,7 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Hero Section - Improved Text Visibility */
+/* Hero Section */
 .hero {
     min-height: 100vh;
     padding-top: 5rem;
@@ -122,17 +100,13 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative;
+    background: transparent;
 }
 
 .hero-content {
     max-width: 900px;
     z-index: 2;
     padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.15); /* Slight background for better text visibility */
-    border-radius: 20px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
 }
 
 .name-container {
@@ -140,11 +114,11 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 4.5rem;
+    font-size: 4rem;
     color: white;
     margin-bottom: 0.5rem;
     font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Stronger shadow for better readability */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .hero-content h2 {
@@ -152,13 +126,13 @@ body {
     color: white;
     margin-bottom: 1rem;
     font-weight: 500;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
 .hero-content p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: white;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
 .hero-stats {
@@ -176,13 +150,13 @@ body {
     font-size: 3.5rem;
     color: white;
     font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .stat p {
     color: white;
     font-size: 1.1rem;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
 .cta-buttons {
@@ -217,17 +191,7 @@ body {
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-.btn.primary:hover {
-    background: var(--primary-color);
-    color: white;
-}
-
-.btn.secondary:hover {
-    background: white;
-    color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .hero-social {
@@ -253,6 +217,7 @@ body {
     padding: 5rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    background: transparent;
 }
 
 .about h2, .skills h2, .projects h2 {
@@ -301,12 +266,13 @@ body {
     background: var(--card-bg);
     padding: 2rem;
     border-radius: 1rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 /* Skills Section */
 .skills {
     padding: 5rem 2rem;
+    background: transparent;
 }
 
 .skills-grid {
@@ -321,7 +287,7 @@ body {
     background: var(--card-bg);
     padding: 2rem;
     border-radius: 1rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .skill-category h3 {
@@ -356,111 +322,122 @@ body {
     width: 0;
 }
 
-/* Projects Section - Safari Style */
+/* Projects Section */
 .projects {
     padding: 5rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    background: transparent;
 }
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
 .project-card {
-    background: white;
-    border-radius: 1rem;
+    position: relative;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    height: auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    -webkit-transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-.project-image {
-    flex: 0 0 220px;
-    max-height: 220px;
-    overflow: hidden;
-}
-
-.project-image img {
+.project-card img {
     width: 100%;
-    height: 100%;
+    height: 220px;
     object-fit: cover;
-    -o-object-fit: cover;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
+    display: block;
 }
 
-.project-content {
+.project-info {
     padding: 1.5rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
 }
 
-.project-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
+.project-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: #333;
 }
 
-.project-tech {
+.project-info p {
     color: var(--primary-color);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
     font-weight: 500;
 }
 
-.project-description {
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-    color: #555;
+.project-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
-.view-project {
+.project-card:hover .project-hover {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.hover-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.hover-content p {
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.view-btn {
     display: inline-block;
-    align-self: flex-start;
     padding: 0.6rem 1.5rem;
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     color: white;
     text-decoration: none;
+    border-radius: 4px;
     font-weight: 600;
-    border-radius: 0.25rem;
-    transition: all 0.3s ease;
     font-size: 0.9rem;
-    margin-top: auto;
+    transition: all 0.3s ease;
 }
 
-.view-project:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+.view-btn:hover {
+    background: var(--secondary-color);
 }
 
 /* Contact Section */
 .contact {
     padding: 5rem 2rem;
+    background-color: rgba(67, 111, 182, 0.85);
     text-align: center;
     color: white;
-    position: relative;
+    margin-top: 3rem;
 }
 
 .contact h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
     color: white;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
 .contact-content {
@@ -487,15 +464,13 @@ body {
     color: white;
     font-size: 2rem;
     transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
     text-decoration: none;
 }
 
 .social-link:hover {
     transform: translateY(-5px);
-    -webkit-transform: translateY(-5px);
     background-color: white;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -506,20 +481,19 @@ body {
     gap: 0.5rem;
     color: white;
     margin-top: 2rem;
-    text-shadow: 0 1px 5px rgba(0,0,0,0.1);
 }
 
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: var(--secondary-color);
+    background-color: #2a4474;
     color: white;
 }
 
-/* Responsive Design - Optimized for Cross-Browser Compatibility */
+/* Responsive Design */
 @media (max-width: 992px) {
     .project-grid {
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -533,9 +507,7 @@ footer {
         top: 60px;
         left: 0;
         right: 0;
-        background-color: rgba(255, 255, 255, 0.95);
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
+        background-color: white;
         flex-direction: column;
         align-items: center;
         gap: 0;
@@ -617,15 +589,12 @@ footer {
         height: 50px;
         font-size: 1.2rem;
     }
-}
-
-/* Safari-specific fixes */
-@supports (-webkit-touch-callout: none) {
-    .project-card {
-        -webkit-transform: translate3d(0, 0, 0);
+    
+    .project-hover {
+        padding: 1rem;
     }
     
-    .project-image img {
-        -webkit-transform: translate3d(0, 0, 0);
+    .hover-content {
+        padding: 1rem;
     }
 }

@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 datasets: [{
                     label: 'Skill Level',
                     data: [95, 90, 88, 85, 80, 85],
-                    backgroundColor: 'rgba(75, 144, 217, 0.2)',
-                    borderColor: 'rgba(75, 144, 217, 1)',
-                    pointBackgroundColor: 'rgba(75, 144, 217, 1)',
+                    backgroundColor: 'rgba(117, 165, 242, 0.2)',
+                    borderColor: 'rgba(117, 165, 242, 1)',
+                    pointBackgroundColor: 'rgba(117, 165, 242, 1)',
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgba(75, 144, 217, 1)'
+                    pointHoverBorderColor: 'rgba(117, 165, 242, 1)'
                 }]
             },
             options: {
@@ -76,11 +76,8 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                const navHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-                
                 window.scrollTo({
-                    top: targetPosition - navHeight,
+                    top: target.offsetTop - 70, // Account for fixed header
                     behavior: 'smooth'
                 });
             }
