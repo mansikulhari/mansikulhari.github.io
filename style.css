@@ -1,10 +1,10 @@
 /* Modern CSS with data-focused design and cross-browser fixes */
 :root {
-    --primary-color: #75A5F2;
-    --secondary-color: #3379E4;
-    --dark-blue: #436fb6;
+    --primary-color: #85b7ff;
+    --secondary-color: #5a94e5;
+    --dark-blue: #3e65a0;
     --text-color: #1f2937;
-    --bg-color: #f3f4f6;
+    --bg-color: #f9fafc;
     --card-bg: #ffffff;
 }
 
@@ -20,6 +20,7 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -27,6 +28,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background: linear-gradient(180deg, var(--primary-color) 0%, var(--bg-color) 20%, var(--bg-color) 80%, var(--dark-blue) 100%);
+    background-attachment: fixed;
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -212,15 +214,15 @@ body {
     transform: translateY(-3px);
 }
 
-/* About Section */
-.about {
+/* Common section styles */
+.about, .skills, .projects, .certifications {
     padding: 5rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
     background: transparent;
 }
 
-.about h2, .skills h2, .projects h2 {
+.about h2, .skills h2, .projects h2, .certifications h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
@@ -228,7 +230,7 @@ body {
     position: relative;
 }
 
-.about h2::after, .skills h2::after, .projects h2::after {
+.about h2::after, .skills h2::after, .projects h2::after, .certifications h2::after {
     content: "";
     position: absolute;
     bottom: -15px;
@@ -240,6 +242,7 @@ body {
     border-radius: 2px;
 }
 
+/* About Section */
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -270,11 +273,6 @@ body {
 }
 
 /* Skills Section */
-.skills {
-    padding: 5rem 2rem;
-    background: transparent;
-}
-
 .skills-grid {
     max-width: 1200px;
     margin: 2rem auto;
@@ -323,13 +321,6 @@ body {
 }
 
 /* Projects Section */
-.projects {
-    padding: 5rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    background: transparent;
-}
-
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -339,11 +330,13 @@ body {
 
 .project-card {
     position: relative;
-    border-radius: 12px;
     overflow: hidden;
     background: white;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    height: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -352,31 +345,41 @@ body {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-.project-card img {
-    width: 100%;
+.project-image {
     height: 220px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    display: block;
+    transition: transform 0.5s ease;
 }
 
-.project-info {
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-title {
     padding: 1.5rem;
+    flex-grow: 1;
 }
 
-.project-info h3 {
+.project-title h3 {
     font-size: 1.25rem;
     margin-bottom: 0.75rem;
     color: #333;
 }
 
-.project-info p {
+.project-tech {
     color: var(--primary-color);
     font-size: 0.85rem;
     line-height: 1.5;
     font-weight: 500;
 }
 
-.project-hover {
+.project-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -384,31 +387,30 @@ body {
     height: 100%;
     background: rgba(255, 255, 255, 0.95);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 2rem;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
+    text-align: center;
 }
 
-.project-card:hover .project-hover {
+.project-card:hover .project-overlay {
     opacity: 1;
     pointer-events: auto;
 }
 
-.hover-content {
-    padding: 2rem;
-    text-align: center;
-}
-
-.hover-content p {
+.project-overlay p {
     margin-bottom: 1.5rem;
     color: #555;
     font-size: 0.95rem;
     line-height: 1.6;
+    max-width: 90%;
 }
 
-.view-btn {
+.view-project {
     display: inline-block;
     padding: 0.6rem 1.5rem;
     background: var(--primary-color);
@@ -417,17 +419,73 @@ body {
     border-radius: 4px;
     font-weight: 600;
     font-size: 0.9rem;
+    letter-spacing: 0.5px;
     transition: all 0.3s ease;
 }
 
-.view-btn:hover {
+.view-project:hover {
     background: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* Certifications Section */
+.certification-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.certification-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+}
+
+.certification-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.certification-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.cert-issuer {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.cert-date {
+    color: #666;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
 }
 
 /* Contact Section */
 .contact {
     padding: 5rem 2rem;
-    background-color: rgba(67, 111, 182, 0.85);
+    background-color: rgba(62, 101, 160, 0.8);
     text-align: center;
     color: white;
     margin-top: 3rem;
@@ -492,7 +550,7 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    .project-grid {
+    .project-grid, .certification-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -549,7 +607,7 @@ footer {
         grid-template-columns: 1fr;
     }
     
-    .project-grid {
+    .project-grid, .certification-grid {
         grid-template-columns: 1fr;
     }
     
@@ -573,6 +631,10 @@ footer {
         height: 60px;
         font-size: 1.5rem;
     }
+    
+    .project-card {
+        height: auto;
+    }
 }
 
 @media (max-width: 480px) {
@@ -590,11 +652,35 @@ footer {
         font-size: 1.2rem;
     }
     
-    .project-hover {
+    .project-overlay {
         padding: 1rem;
     }
     
-    .hover-content {
-        padding: 1rem;
+    .certification-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .certification-icon {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Safari-specific fixes */
+@media not all and (min-resolution:.001dpcm) { 
+    @supports (-webkit-appearance:none) {
+        .project-card {
+            display: block;
+        }
+        
+        .project-title {
+            display: block;
+        }
+        
+        .project-overlay {
+            display: block;
+            padding-top: 33%;
+        }
     }
 }

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Mansi Kulhari - Data Analyst Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
@@ -19,6 +20,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -113,58 +115,108 @@
         <h2>Featured Projects</h2>
         <div class="project-grid">
             <div class="project-card">
-                <img src="assets/images/thyroid-project.jpg" alt="Thyroid Disease Risk Prediction">
-                <div class="project-info">
+                <div class="project-image">
+                    <img src="assets/images/thyroid-project.jpg" alt="Thyroid Disease Risk Prediction">
+                </div>
+                <div class="project-title">
                     <h3>Thyroid Disease Risk Prediction</h3>
-                    <p>Healthcare Analytics | Machine Learning | ETL Pipeline</p>
+                    <p class="project-tech">Healthcare Analytics | Machine Learning | ETL Pipeline</p>
                 </div>
-                <div class="project-hover">
-                    <div class="hover-content">
-                        <p>Designed and implemented a comprehensive data pipeline for processing thyroid patient records, incorporating multiple healthcare datasets through ETL processes, improving prediction accuracy by 25%.</p>
-                        <a href="https://github.com/mansikulhari" class="view-btn">VIEW PROJECT</a>
-                    </div>
+                <div class="project-overlay">
+                    <p>Designed and implemented a comprehensive data pipeline for processing thyroid patient records, incorporating multiple healthcare datasets through ETL processes, improving prediction accuracy by 25%.</p>
+                    <a href="https://github.com/mansikulhari" target="_blank" class="view-project">VIEW PROJECT</a>
                 </div>
             </div>
             
             <div class="project-card">
-                <img src="assets/images/eta-project.jpg" alt="eTA – Interactive Course Assistant">
-                <div class="project-info">
+                <div class="project-image">
+                    <img src="assets/images/eta-project.jpg" alt="eTA – Interactive Course Assistant">
+                </div>
+                <div class="project-title">
                     <h3>eTA – Interactive Course Assistant</h3>
-                    <p>FAISS | Machine Learning | Python | Transformers</p>
+                    <p class="project-tech">FAISS | Machine Learning | Python | Transformers</p>
                 </div>
-                <div class="project-hover">
-                    <div class="hover-content">
-                        <p>Developed an AI-powered student assistant using Python and Transformers that processed 1,000+ daily queries, improving response accuracy by 90% through advanced text chunking algorithms.</p>
-                        <a href="https://github.com/mansikulhari/eTA" class="view-btn">VIEW PROJECT</a>
-                    </div>
+                <div class="project-overlay">
+                    <p>Developed an AI-powered student assistant using Python and Transformers that processed 1,000+ daily queries, improving response accuracy by 90% through advanced text chunking algorithms.</p>
+                    <a href="https://github.com/mansikulhari/eTA" target="_blank" class="view-project">VIEW PROJECT</a>
                 </div>
             </div>
             
             <div class="project-card">
-                <img src="assets/images/reddit-project.jpg" alt="Reddit Forum Analysis">
-                <div class="project-info">
+                <div class="project-image">
+                    <img src="assets/images/reddit-project.jpg" alt="Reddit Forum Analysis">
+                </div>
+                <div class="project-title">
                     <h3>Reddit Forum Analysis</h3>
-                    <p>Python | NLP | Clustering Algorithms | Data Visualization</p>
+                    <p class="project-tech">Python | NLP | Clustering Algorithms | Data Visualization</p>
                 </div>
-                <div class="project-hover">
-                    <div class="hover-content">
-                        <p>Analyzed discussion patterns in Reddit forums using natural language processing techniques, implementing advanced clustering algorithms to identify key topics and sentiment trends.</p>
-                        <a href="https://github.com/mansikulhari/Reddit-Forum-Analysis-and-Clustering" class="view-btn">VIEW PROJECT</a>
-                    </div>
+                <div class="project-overlay">
+                    <p>Analyzed discussion patterns in Reddit forums using natural language processing techniques, implementing advanced clustering algorithms to identify key topics and sentiment trends.</p>
+                    <a href="https://github.com/mansikulhari/Reddit-Forum-Analysis-and-Clustering" target="_blank" class="view-project">VIEW PROJECT</a>
                 </div>
             </div>
             
             <div class="project-card">
-                <img src="assets/images/stock-project.jpg" alt="Stock Price Analysis">
-                <div class="project-info">
-                    <h3>Stock Price Analysis</h3>
-                    <p>Python | Algorithmic Trading | Data Visualization | Statistical Analysis</p>
+                <div class="project-image">
+                    <img src="assets/images/stock-project.jpg" alt="Stock Price Analysis">
                 </div>
-                <div class="project-hover">
-                    <div class="hover-content">
-                        <p>Developed trading algorithms and created interactive visualizations for stock market data, implementing predictive models for market trend analysis.</p>
-                        <a href="https://github.com/mansikulhari/Stock-Price-Analysis-and-Algorithmic-Trading" class="view-btn">VIEW PROJECT</a>
-                    </div>
+                <div class="project-title">
+                    <h3>Stock Price Analysis</h3>
+                    <p class="project-tech">Python | Algorithmic Trading | Data Visualization | Statistical Analysis</p>
+                </div>
+                <div class="project-overlay">
+                    <p>Developed trading algorithms and created interactive visualizations for stock market data, implementing predictive models for market trend analysis.</p>
+                    <a href="https://github.com/mansikulhari/Stock-Price-Analysis-and-Algorithmic-Trading" target="_blank" class="view-project">VIEW PROJECT</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <h2>Certifications</h2>
+        <div class="certification-grid">
+            <div class="certification-card">
+                <div class="certification-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="certification-content">
+                    <h3>Data Science Professional Certificate</h3>
+                    <p class="cert-issuer">IBM</p>
+                    <p class="cert-date">2023</p>
+                </div>
+            </div>
+            
+            <div class="certification-card">
+                <div class="certification-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="certification-content">
+                    <h3>Machine Learning Specialization</h3>
+                    <p class="cert-issuer">Stanford University (Coursera)</p>
+                    <p class="cert-date">2023</p>
+                </div>
+            </div>
+            
+            <div class="certification-card">
+                <div class="certification-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="certification-content">
+                    <h3>SQL for Data Science</h3>
+                    <p class="cert-issuer">UC Davis (Coursera)</p>
+                    <p class="cert-date">2022</p>
+                </div>
+            </div>
+            
+            <div class="certification-card">
+                <div class="certification-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="certification-content">
+                    <h3>Tableau Data Visualization</h3>
+                    <p class="cert-issuer">Tableau</p>
+                    <p class="cert-date">2022</p>
                 </div>
             </div>
         </div>
