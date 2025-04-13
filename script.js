@@ -14,13 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 datasets: [{
                     label: 'Skill Level',
                     data: [95, 90, 88, 85, 80, 85],
-                    backgroundColor: 'rgba(133, 183, 255, 0.3)',
-                    borderColor: 'rgba(90, 148, 229, 1)',
+                    backgroundColor: 'rgba(66, 133, 244, 0.3)',
+                    borderColor: 'rgba(66, 133, 244, 1)',
                     borderWidth: 2,
-                    pointBackgroundColor: 'rgba(90, 148, 229, 1)',
+                    pointBackgroundColor: 'rgba(66, 133, 244, 1)',
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgba(90, 148, 229, 1)',
+                    pointHoverBorderColor: 'rgba(66, 133, 244, 1)',
                     pointRadius: 5,
                     pointHoverRadius: 7
                 }]
